@@ -259,14 +259,54 @@ In this code example, we create a canvas element that is 320px wide and 240px hi
 * **Local Storage** is a feature in HTML5 for websites to store information on your computer and retrieve it later. Unlike cookies, it is built for large quantities of information and does not require any additional HTTP requests once instantiated, accessed instead via JavaScript. Local Storage makes use of key/value pairs to store information. Currently limited to string-to-=string mappings. Another limitation: saved information is stored on local computer only.
 ```javascript
 localStorage.setItem(key, value); //set an item, with its key and mapped value
-localStorage.getItem(key); //get the item value using its key mapping
+var myItem = localStorage.getItem(key); //get the item value using its key mapping
 ```
 
 * **Web Workers** provide a standard method for browsers to run JavaScript in the background, spawning multiple “threads” that all run at approximately the same time. These “background threads” can do complex mathematical calculations, make network requests, or access local storage while the main web page responds to the user scrolling, clicking, or typing. Useful for web applications that make use of real-time data rendering and computations.
-
+```javascript
+//HTML JavaScript
+var myWorker = new Worker("my_task.js");
+myWorker.onmessage = function (oEvent) {
+  console.log("Worker said : " + oEvent.data);
+};
+myWorker.postMessage("John");
+```
+```javascript
+//my_task.js Web Worker script
+postMessage("I\'m working before postMessage(\'John\').");
+onmessage = function (oEvent) {
+  postMessage("Hi " + oEvent.data);
+};
+```
 
 * **Geolocation** feature allows users to provide their location to web applications; simply put, it exposes latitudinal and longitudinal information to JavaScript on a page. Can be difficult to use depending on the positioning hardware of the user; mobile devices will provide geolocation data easily, while desktop computers may not have the necessary networking equipment to connect to the API. Also, the API requires opting-in with explicit permission from the user.
+```javascript
+var latitudePosition = position.coords.latitude; //Get latitudinal position
+var longitudePosition = position.coords.longitude; //Get longitudinal position
+```
+
 * **Offline Support** enables websites to function offline without an internet connection. When enabled on a website, the web server instructs the browser to download specific assets needed to function offline. These instructions are in the form of a cache manifest file. Mostly used in mobile websites when saved to a home screen of a mobile device.
+```html
+<!DOCTYPE html>
+<html lang="en" manifest="/offline.appcache">
+  // your html document
+</html>
+```
+And your offline.appcahce manifest file
+```script
+CACHE MANIFEST
+# This is a comment
+CACHE:
+/css/screen.css
+/css/offline.css
+/js/screen.js
+/img/logo.png
+http://example.com/css/styles.css
+FALLBACK:
+/ /offline.html
+NETWORK:
+*
+```
 * **History** API in HTML5 provides a standardized way to manipulate the browser history via script. You can add entries to the browser history, and respond when those entries are removed from the stack by the user pressing the browser’s back button. This means that the URL can continue to do its job as a unique identifier for the current resource, even in script-heavy applications that don’t ever perform a full page refresh. Great for MVC applications.
 
 
