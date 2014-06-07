@@ -454,8 +454,11 @@ li:before {
 ```
 * **Web and Icon Fonts** lets developers specify their own custom fonts for use in their websites. Icon fonts are also possible using SVG-generated webfonts.
 ```html
-<p class="myfont">This line of text uses a custom webfont called Roboto. Below you'll find a couple of icons from a custom icon font.</p>
-<p class="myicons">&#x25b2; &#x25b6; &#x25bc; &#x25b4; &#x2795; &#x2796; &#x2715;</p>
+<p class="myfont">This line of text uses a custom webfont 
+    called Roboto. Below you'll find a couple of icons 
+    from a custom icon font.</p>
+<p class="myicons">&#x25b2; &#x25b6; &#x25bc; 
+    &#x25b4; &#x2795; &#x2796; &#x2715;</p>
 <p class="myicons">&#xe60a;</p>
 ```
 ```stylesheet
@@ -560,7 +563,9 @@ li:before {
 }
 @keyframes mykeyframes {
    0%{height:0px;}
-   50%{height:300px; transform:translate(20px, 10px) rotate(90deg) skewX(25deg); background-color:#DB0000;}
+   50%{height:300px; 
+       transform:translate(20px, 10px) rotate(90deg) skewX(25deg); 
+       background-color:#DB0000;}
    100%{height:0px;}
 }
 ```
