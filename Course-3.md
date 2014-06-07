@@ -308,7 +308,17 @@ NETWORK:
 *
 ```
 * **History** API in HTML5 provides a standardized way to manipulate the browser history via script. You can add entries to the browser history, and respond when those entries are removed from the stack by the user pressing the browser’s back button. This means that the URL can continue to do its job as a unique identifier for the current resource, even in script-heavy applications that don’t ever perform a full page refresh. Great for MVC applications.
-
+```javascript
+window.history.go(-2); // Go back two entries
+window.history.go(3); // Go forward 3 entries
+window.history.pushState(stateObj, title, URL); // Creates a new history entry
+window.history.replaceState(stateObj, title, URL); // Updates the current history entry
+//Trigger popstate when user goes forward or backward in history using browser buttons
+window.addEventListener('popstate', function(event) {
+	var state = event.state;  
+	alert(state);
+});
+```
 
 ### CSS3 Features and Properties (30 minutes) [5]
 * **CSS length calculations** is possible in CSS3 using the calc() property, which lets you do basic math calculations to compute a length value. Useful for computing widths and heights and compensating for margins.
