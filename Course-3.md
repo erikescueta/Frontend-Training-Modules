@@ -414,7 +414,9 @@ text-shadow:8px 4px 2px #DB0000;
    width:100px;
    position:relative;
    overflow:visible;
-   background: linear-gradient(135deg, rgba(30,87,153,1) 0%,rgba(41,137,216,0) 50%,rgba(32,124,202,0.02) 51%,rgba(125,185,232,1) 100%);
+   background: linear-gradient(135deg, rgba(30,87,153,1) 0%,
+               rgba(41,137,216,0) 50%,rgba(32,124,202,0.02) 51%,
+               rgba(125,185,232,1) 100%);
 }
 .innerbox{
    height:80px;
