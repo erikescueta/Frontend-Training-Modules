@@ -520,12 +520,28 @@ li:before {
 ```
 ```stylesheet
    .mybackgrounds{
-      background:url("background1.jpg") center center no-repeat #000, url("background2.jpg") top left no-repeat, url("background3.jpg") bottom right no-repeat, url("background4.jpg") repeat cover;
+      background:url("background1.jpg") center center no-repeat #000, 
+		  					 url("background2.jpg") top left no-repeat, 
+								 url("background3.jpg") bottom right no-repeat, 
+								 url("background4.jpg") repeat cover;
    }
 ```
 * **CSS Columns** automatically convert an element block into columns, with native properties for setting the column gaps and rules for size and style.
 ```html
-   <p class="three-columns">HSBC is one of the world's largest banking and financial services organisations. With more than 6,300 offices in both established and emerging markets, we aim to be where the growth is, connecting customers to opportunities, enabling businesses to thrive and economies to prosper, and, ultimately, helping people to fulfil their hopes and realise their ambitions. We serve around 54 million customers through our four Global Businesses: Retail Banking and Wealth Management, Commercial Banking, Global Banking and Markets, and Global Private Banking. Our network covers 75 countries and territories in Europe, the Asia-Pacific region, the Middle East, Africa, North America and Latin America. Listed on the London, Hong Kong, New York, Paris and Bermuda stock exchanges, shares in HSBC Holdings plc are held by about 216,000 in 131 countries and territories.</p>
+   <p class="three-columns">HSBC is one of the world's largest banking 
+				and financial services organisations. With more than 6,300 offices 
+				in both established and emerging markets, we aim to be where the 
+				growth is, connecting customers to opportunities, enabling businesses 
+				to thrive and economies to prosper, and, ultimately, helping people 
+				to fulfil their hopes and realise their ambitions. We serve around 
+				54 million customers through our four Global Businesses: Retail 
+				Banking and Wealth Management, Commercial Banking, Global Banking 
+				and Markets, and Global Private Banking. Our network covers 75 
+				countries and territories in Europe, the Asia-Pacific region, the 
+				Middle East, Africa, North America and Latin America. Listed on the 
+				London, Hong Kong, New York, Paris and Bermuda stock exchanges, 
+				shares in HSBC Holdings plc are held by about 216,000 in 131 countries 
+				and territories.</p>
 ```
 ```stylesheet
 .three-columns{   
