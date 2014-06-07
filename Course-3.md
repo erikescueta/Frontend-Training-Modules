@@ -338,11 +338,13 @@ window.addEventListener('popstate', function(event) {
       position:relative;
       margin-right:1em;
       background:#F60;
+	  float:left;
    }
    .main{
       width:calc(100% - 1em);
       position:relative;
       background:#FC0;
+	  float:right;
    }
    
 ```
