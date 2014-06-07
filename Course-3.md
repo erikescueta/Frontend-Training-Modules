@@ -57,36 +57,22 @@
 * **section** represents a generic document or application. Essentially a thematic grouping of content, typically with a heading. Should be used for content segregation and division for major sections; for example, chapters or numbered sections for online documentation; or for an article page, sections can be used to segregate the introduction, articles, and contact information.
 ```html
    <article>
-      <hgroup>
-         <time datetime="2014-05-07">07 May 2014</time>
-         <h1>Connecting customers to opportunities</h1>
-         <p class="author">by Stuart Gulliver</p>
-         <p class="role">HSBC Group Chief Executive</p>
-      </hgroup>
+      <section>
+	<hgroup>...</hgroup>
+      </section>
       <section>
          <p>HSBC opened for business in Hong Kong and Shanghai in 1865. Since then, 
             the world has witnessed many periods of political and economic turbulence 
             but HSBC has grown and thrived, thanks to its ability to adapt. We constantly 
             reassess how we can best serve our customers in meeting the challenges and 
             opportunities of the times in which we live.</p>
+	 <p>...</p>
+         <aside>...</aside>
+         <p>...</p>
       </section>
-      <footer>
-         <p>Related content</p>
-         <section>
-            <hgroup>
-               <h1>HSBC Holdings plc Interim Management Statement 1Q 2014</h1>
-               <time datetime-"2014-05-07">07 May 2014</time>
-               <p>Reported profit before tax (‘PBT’) down 20% in 1Q of 2014…</p>
-            </hgroup>
-         </section>
-         <section>
-            <hgroup>
-               <h1>HSBC Holdings plc Annual Results 2013</h1>
-               <time datetime-"2014-02-24">24 Feb 2014</time>
-               <p>Reported profit before tax (‘PBT’) up 9% in 2013 at US$22,565m…</p>
-            </hgroup>
-         </section>
-      </footer>
+      <section>
+	<footer>...</footer>
+      </section>
    <article>
 ```
 * **nav** represents a section of a page that links to other pages or to parts within the page: a section with navigation links. Not all groups of links on a page need to be in a nav element — only sections that consist of major navigation blocks are appropriate for the nav element. Not required for footer links to common pages, such as "Terms and Conditions", etc.
@@ -247,8 +233,15 @@ For a sample demo, please see [Course 3 HTML5 CSS3 Sample Code.html](3. HTML5 & 
 ### HTML5 Feature APIs (20 minutes) [3]
 * **Canvas** in a nutshell is a rectangle in your page where you can use JavaScript to draw anything you want in real-time. You can have more than one <canvas> element on the same page. Each canvas will show up in the DOM, and each canvas maintains its own state. If you give each canvas an id attribute, you can access them just like any other element.
 ```html
-<canvas id="myCanvas" width="300" height="225"></canvas>
+<canvas id="myCanvas" width="320" height="240"></canvas>
 ```
+```javascript
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.fillStyle = "#FF0000";
+ctx.fillRect(0,10,160,80);
+```
+In this code example, we create a canvas element that is 320px wide and 240px high; then we create a red rectangle inside the canvas that is 160px wide and 80px high, at X and Y coordinates 0px and 10px from the top-left of the canvas, respectively.
 * **Video and Audio** elements allow direct embedding of media content into HTML pages. However, these can be tricky to use as there are no defined universal HTML5 video and audio codecs for playback across all browsers; as a result, multiple file types (specifically OGG/MP4/WEBM for video, and OGG/MP3/WAV for audio) need to be embedded for cross-browser performance and to support mobile devices. The **video** element can accept subtitle tracks in VTT format.
 ```html
 <video width="320" height="240" controls>
@@ -264,8 +257,14 @@ For a sample demo, please see [Course 3 HTML5 CSS3 Sample Code.html](3. HTML5 & 
 </audio>
 ```
 * **Local Storage** is a feature in HTML5 for websites to store information on your computer and retrieve it later. Unlike cookies, it is built for large quantities of information and does not require any additional HTTP requests once instantiated, accessed instead via JavaScript. Local Storage makes use of key/value pairs to store information. Currently limited to string-to-=string mappings. Another limitation: saved information is stored on local computer only.
+```javascript
+localStorage.setItem(key, value); //set an item, with its key and mapped value
+localStorage.getItem(key); //get the item value using its key mapping
+```
 
 * **Web Workers** provide a standard method for browsers to run JavaScript in the background, spawning multiple “threads” that all run at approximately the same time. These “background threads” can do complex mathematical calculations, make network requests, or access local storage while the main web page responds to the user scrolling, clicking, or typing. Useful for web applications that make use of real-time data rendering and computations.
+
+
 * **Geolocation** feature allows users to provide their location to web applications; simply put, it exposes latitudinal and longitudinal information to JavaScript on a page. Can be difficult to use depending on the positioning hardware of the user; mobile devices will provide geolocation data easily, while desktop computers may not have the necessary networking equipment to connect to the API. Also, the API requires opting-in with explicit permission from the user.
 * **Offline Support** enables websites to function offline without an internet connection. When enabled on a website, the web server instructs the browser to download specific assets needed to function offline. These instructions are in the form of a cache manifest file. Mostly used in mobile websites when saved to a home screen of a mobile device.
 * **History** API in HTML5 provides a standardized way to manipulate the browser history via script. You can add entries to the browser history, and respond when those entries are removed from the stack by the user pressing the browser’s back button. This means that the URL can continue to do its job as a unique identifier for the current resource, even in script-heavy applications that don’t ever perform a full page refresh. Great for MVC applications.
