@@ -71,7 +71,7 @@
 				<p>...</p>
       </section>
       <section>
-	<footer>...</footer>
+				<footer>...</footer>
       </section>
    <article>
 ```
