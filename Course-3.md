@@ -58,17 +58,17 @@
 ```html
    <article>
       <section>
-	<hgroup>...</hgroup>
+				<hgroup>...</hgroup>
       </section>
       <section>
-         <p>HSBC opened for business in Hong Kong and Shanghai in 1865. Since then, 
+				<p>HSBC opened for business in Hong Kong and Shanghai in 1865. Since then, 
             the world has witnessed many periods of political and economic turbulence 
             but HSBC has grown and thrived, thanks to its ability to adapt. We constantly 
             reassess how we can best serve our customers in meeting the challenges and 
             opportunities of the times in which we live.</p>
-	 <p>...</p>
-         <aside>...</aside>
-         <p>...</p>
+				<p>...</p>
+				<aside>...</aside>
+				<p>...</p>
       </section>
       <section>
 	<footer>...</footer>
