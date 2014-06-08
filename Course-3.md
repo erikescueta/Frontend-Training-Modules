@@ -56,24 +56,24 @@
 ```
 * **section** represents a generic document or application. Essentially a thematic grouping of content, typically with a heading. Should be used for content segregation and division for major sections; for example, chapters or numbered sections for online documentation; or for an article page, sections can be used to segregate the introduction, articles, and contact information.
 ```html
-   <article>
-      <section>
-	<hgroup>...</hgroup>
-      </section>
-      <section>
-	<p>HSBC opened for business in Hong Kong and Shanghai in 1865. Since then, 
-            the world has witnessed many periods of political and economic turbulence 
-            but HSBC has grown and thrived, thanks to its ability to adapt. We constantly 
-            reassess how we can best serve our customers in meeting the challenges and 
-            opportunities of the times in which we live.</p>
-	<p>...</p>
-	<aside>...</aside>
-	<p>...</p>
-      </section>
-      <section>
-	<footer>...</footer>
-      </section>
-   <article>
+<article>
+	<section>
+		<hgroup>...</hgroup>
+	</section>
+	<section>
+		<p>HSBC opened for business in Hong Kong and Shanghai in 1865. Since then, 
+			the world has witnessed many periods of political and economic turbulence 
+			but HSBC has grown and thrived, thanks to its ability to adapt. We constantly 
+			reassess how we can best serve our customers in meeting the challenges and 
+			opportunities of the times in which we live.</p>
+		<p>...</p>
+		<aside>...</aside>
+		<p>...</p>
+	</section>
+	<section>
+		<footer>...</footer>
+	</section>
+<article>
 ```
 * **nav** represents a section of a page that links to other pages or to parts within the page: a section with navigation links. Not all groups of links on a page need to be in a nav element — only sections that consist of major navigation blocks are appropriate for the nav element. Not required for footer links to common pages, such as "Terms and Conditions", etc.
 ```html
